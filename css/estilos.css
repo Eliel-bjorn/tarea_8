@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f7f7f9;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #d14a73;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.portada {
+  text-align: center;
+  padding: 80px 24px 60px;
+}
+
+.portada__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d14a73;
+  font-size: 14px;
+}
+
+.portada__titulo {
+  font-size: 42px;
+  font-weight: 600;
+  color: #191919;
+  margin: 12px 0 16px;
+}
+
+.portada__linea {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: #d14a73;
+}
+
+.portafolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 90px;
+}
+
+.portafolio > * {
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: calc(33.333% - 24px);
+  min-width: 240px;
+}
+
+.portafolio__tarjeta {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(25, 25, 25, 0.08);
+}
+
+.portafolio__tarjeta img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.portafolio__tarjeta:hover img {
+  transform: scale(1.05);
+}
+
+.portafolio__tarjeta--superpuesta {
+  border: 2px solid #dbe6ff;
+}
+
+.portafolio__detalle {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 32px;
+  gap: 12px;
+  top: 100%;
+  transition: all 0.5s linear;
+}
+
+.portafolio__tarjeta--superpuesta:hover .portafolio__detalle {
+  top: 0;
+}
+
+.portafolio__tarjeta--ancha {
+  flex: 1 1 calc(66.666% - 24px);
+  max-width: calc(66.666% - 24px);
+  min-width: 480px;
+}
+
+.portafolio__detalle h3 {
+  font-size: 20px;
+  color: #191919;
+}
+
+.portafolio__detalle p {
+  font-size: 14px;
+  color: #777777;
+}
+
+.portafolio__detalle a {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #d14a73;
+  color: #ffffff;
+  border-radius: 24px;
+  transition: all 0.4s linear;
+}
+
+.portafolio__detalle a:hover {
+  background-color: #191919;
+}
+
+.bloque-encabezado {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.bloque-encabezado__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d14a73;
+  font-size: 13px;
+}
+
+.bloque-encabezado__titulo {
+  font-size: 32px;
+  color: #191919;
+  margin: 10px 0 16px;
+}
+
+.bloque-encabezado__linea {
+  display: inline-block;
+  width: 50px;
+  height: 3px;
+  background-color: #d14a73;
+}
+
+.equipo {
+  margin-bottom: 90px;
+}
+
+.equipo__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.equipo__tarjeta {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 30px rgba(19, 19, 19, 0.08);
+  text-align: center;
+  padding-bottom: 24px;
+  transition: transform 0.4s linear;
+}
+
+.equipo__tarjeta figure {
+  overflow: hidden;
+}
+
+.equipo__tarjeta img {
+  filter: grayscale(100%);
+  transition: all 0.5s linear;
+}
+
+.equipo__tarjeta:hover {
+  transform: translateY(-12px);
+}
+
+.equipo__tarjeta:hover img,
+.equipo__tarjeta--destacada img {
+  filter: grayscale(0%);
+}
+
+.equipo__tarjeta h3 {
+  margin-top: 18px;
+  font-size: 18px;
+  color: #191919;
+}
+
+.equipo__tarjeta p {
+  font-size: 14px;
+  color: #888888;
+}
+
+.precios {
+  margin-bottom: 90px;
+}
+
+.precios__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.precios__tarjeta {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(19, 19, 19, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.precios__icono {
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 14px;
+  line-height: 1;
+  color: #d14a73;
+}
+
+.precios__tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 24px 50px rgba(19, 19, 19, 0.12);
+}
+
+.precios__tarjeta--destacada {
+  border: 2px solid #d14a73;
+}
+
+.precios__tarjeta h3 {
+  font-size: 20px;
+  color: #191919;
+  margin-bottom: 12px;
+}
+
+.precios__precio {
+  font-size: 48px;
+  font-weight: 600;
+  color: #191919;
+  margin-bottom: 24px;
+}
+
+.precios__precio span {
+  font-size: 18px;
+  color: #d14a73;
+}
+
+.precios__tarjeta ul {
+  list-style: none;
+  color: #777777;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 2px solid #191919;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.4s linear;
+}
+
+.boton:hover {
+  background-color: #191919;
+  color: #ffffff;
+}
+
+.noticias {
+  margin-bottom: 90px;
+}
+
+.noticias__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.noticias__tarjeta {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(19, 19, 19, 0.08);
+  transition: transform 0.4s ease;
+}
+
+.noticias__tarjeta:hover {
+  transform: translateY(-10px);
+}
+
+.noticias__media {
+  overflow: hidden;
+}
+
+.noticias__media img {
+  transition: all 0.5s linear;
+}
+
+.noticias__tarjeta:hover .noticias__media img {
+  transform: scale(1.1);
+}
+
+.noticias__contenido {
+  padding: 24px 28px 32px;
+}
+
+.noticias__contenido h3 {
+  font-size: 20px;
+  color: #191919;
+  margin-bottom: 8px;
+}
+
+.noticias__meta {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #d14a73;
+  margin-bottom: 12px;
+}
+
+.noticias__contenido p {
+  color: #777777;
+  margin-bottom: 14px;
+}
+
+.noticias__contenido a {
+  font-weight: 600;
+}
+
+.pie-sitio {
+  text-align: center;
+  padding: 32px;
+  font-size: 14px;
+  color: #999999;
+}
+
+@media (max-width: 768px) {
+  .portada__titulo {
+    font-size: 32px;
+  }
+
+  main {
+    padding: 0 16px 64px;
+  }
+
+  .portafolio__tarjeta,
+  .portafolio__tarjeta--ancha,
+  .portafolio > * {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
